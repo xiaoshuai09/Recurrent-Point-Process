@@ -66,14 +66,14 @@ def RNNPP(rnn_inputs_event, #dims batch_size x num_steps x input_size(mark&time)
                 # rnn for event sequence 
                 rnn_input_onehot = tf.one_hot(tf.cast(rnn_inputs_event[:,:,0],tf.int32),num_classes) #when num_class is large, use tf embedding
                 rnn_inputs_event = tf.concat([rnn_input_onehot,rnn_inputs_event[:,:,1:]],axis=2)
-                cell = tf.contrib.rnn.BasicRNNCell(state_size_event)#,activation=tf.nn.relu  
+                cell = tf.contrib.rnn.BasicRNNCell(state_size_event) #cell = tf.contrib.rnn.LSTMCell(state_size,state_is_tuple=True) is perferred
                 init_state = cell.zero_state(batch_size, tf.float32)
                 rnn_outputs_event, final_state = tf.nn.dynamic_rnn(cell, rnn_inputs_event, sequence_length=seqlen, initial_state=init_state)
                 
         if TYPE=='joint' or TYPE=='timeseries':
             with tf.variable_scope("timeseries") as scope:
                 # rnn for time series
-                cell = tf.contrib.rnn.BasicRNNCell(state_size_timeseries)#,activation=tf.nn.relu  
+                cell = tf.contrib.rnn.BasicRNNCell(state_size_timeseries) #cell = tf.contrib.rnn.LSTMCell(state_size,state_is_tuple=True) is perferred
                 init_state = cell.zero_state(batch_size*num_steps, tf.float32)
                 rnn_inputs_timeseries = tf.reshape(rnn_inputs_timeseries,[-1,NUM_steps_timeseries,Timeseries_feature])
                 rnn_outputs_timeseries, final_state = tf.nn.dynamic_rnn(cell, rnn_inputs_timeseries, initial_state=init_state)
