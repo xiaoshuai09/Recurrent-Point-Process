@@ -7,7 +7,7 @@ Code accompanying the paper ["Modeling The Intensity Function Of Point Process V
 ## Prerequisites
 
 - Computer with Linux or OSX
-- Language: Theano python2.7
+- Language: TensorFlow 1.0
 - GPU is strongly recommended when training.
 
 ## Notes
