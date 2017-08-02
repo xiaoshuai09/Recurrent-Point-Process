@@ -4,6 +4,19 @@
 
 Code accompanying the paper ["Modeling The Intensity Function Of Point Process Via Recurrent Neural Networks"](https://arxiv.org/abs/1705.08982)
 
+If the code helps your research, please cite our work.
+
+    @inproceedings{xiao2017modeling,
+    title={Modeling the Intensity Function of Point Process Via Recurrent Neural Networks.},
+    author={Xiao, Shuai and Yan, Junchi and Yang, Xiaokang and Zha, Hongyuan and Chu, Stephen M},
+    booktitle={AAAI},
+    pages={1597--1603},
+    year={2017}
+    }
+
+    
+
+
 ## Prerequisites
 
 - Computer with Linux or OSX
