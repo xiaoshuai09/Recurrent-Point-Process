@@ -13,6 +13,7 @@ Code accompanying the paper ["Modeling The Intensity Function Of Point Process V
 ## Notes
 
 - For bugs and questions, contact: benjaminforever at sjtu.edu.cn
+- It would be nice if you are interested in this work and cite our paper.
 
 ## Paper Abstract:
 Event sequence, asynchronously generated with random timestamp, is ubiquitous among applications. The precise and arbitrary timestamp can 
