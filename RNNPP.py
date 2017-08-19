@@ -184,7 +184,7 @@ sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, gpu_options=g
 
 sess.run(tf.global_variables_initializer())
 
-# GAN train
+# train
 for it in range(ITERS):
     if TYPE=='joint':
         real_batch = event_iterator.next_batch(BATCH_SIZE)
