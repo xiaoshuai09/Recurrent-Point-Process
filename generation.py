@@ -151,7 +151,7 @@ def generate_samples_marked(intensity, T, n):
                 norm_i = [ x/x_sum for x in intens2]
                 #print(norm_i)
                 dim = np.nonzero(np.random.multinomial(1, norm_i))
-                seq.append([new_t, np.asscalar(dim[0])])
+                seq.append([np.asscalar(dim[0],new_t)])
             t = new_t
         if len(seq)>1:
             Sequences.append(seq) 
