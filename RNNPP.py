@@ -133,7 +133,7 @@ def RNNPP(rnn_inputs_event, #dims batch_size x num_steps x input_size(mark&time)
         total_loss = mark_loss + reg*time_loss
         
         #length of y minus 2 to drop last prediction
-        seqlen_mask = tf.slice(tf.gather(lower_triangular_ones, seqlen - 2), [0, start], [batch_size, num_steps - start])
+        seqlen_mask = tf.slice(tf.gather(lower_triangular_ones, seqlen - 2), [0, start], [batch_size, num_steps])
 
         mark_loss = tf.reshape(mark_loss,[batch_size,num_steps])
         mark_loss *= seqlen_mask 
